@@ -12,15 +12,15 @@ class ViewController: UIViewController {
 
 
     @IBAction func rockClicked(_ sender: Any) {
-        buttonClicked(handShape: .rock)
+        buttonClicked(plyrOneHandShape: .rock)
     }
     
     @IBAction func paperClicked(_ sender: Any) {
-        buttonClicked(handShape: .paper)
+        buttonClicked(plyrOneHandShape: .paper)
     }
     
     @IBAction func scissorsClicked(_ sender: Any) {
-        buttonClicked(handShape: .scissors)
+        buttonClicked(plyrOneHandShape: .scissors)
     }
     
     @IBOutlet weak var resultsLabel: UILabel!
@@ -32,11 +32,11 @@ class ViewController: UIViewController {
         // Do any additional setup after loading the view, typically from a nib.
     }
 
-    func buttonClicked(handShape: HandShape) {
+    func buttonClicked(plyrOneHandShape: HandShape) {
         let playerTwoResult = HandShape.randomHandShape()
-        playerOneResultLabel.text = "You select \(convertToString(handShape: handShape))"
-        playerTwoResultLabel.text = "Computer selects \(convertToString(handShape: playerTwoResult))"
-        resultsLabel.text = game(one: handShape, two: playerTwoResult).rawValue
+        playerOneResultLabel.text = "You select \(convertToString(handShape: plyrOneHandShape))"
+        playerTwoResultLabel.text = "Your Opponent selects \(convertToString(handShape: playerTwoResult))"
+        resultsLabel.text = game(one: plyrOneHandShape, two: playerTwoResult).rawValue
         
     }
     
@@ -79,22 +79,21 @@ class ViewController: UIViewController {
     }
     
     func game(one: HandShape, two: HandShape) -> MatchResult {
-
-        if one == two {
-            return .tie
-        } else if one == .paper && two == .rock {
+        
+        switch (one, two) {
+        case (.paper, .rock):
             return .playerOneWin
-        } else if one == .paper && two == .scissors {
+        case (.paper, .scissors):
             return .playerOneLose
-        } else if one == .rock && two == .paper {
+        case (.rock, .paper):
             return .playerOneLose
-        } else if one == .rock  && two == .scissors {
+        case (.rock, .scissors):
             return .playerOneWin
-        } else if one == .scissors && two == .rock {
+        case (.scissors, .rock):
             return .playerOneLose
-        } else if one == .scissors && two == .paper {
+        case (.scissors, .paper):
             return .playerOneWin
-        } else {
+        default:
             return .tie
         }
     }
