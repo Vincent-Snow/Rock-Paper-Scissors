@@ -8,20 +8,24 @@
 
 /* Begin PBXBuildFile section */
 		88BCD1AC21E590950015415F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88BCD1AB21E590950015415F /* AppDelegate.swift */; };
-		88BCD1AE21E590950015415F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88BCD1AD21E590950015415F /* ViewController.swift */; };
+		88BCD1AE21E590950015415F /* RPSViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88BCD1AD21E590950015415F /* RPSViewController.swift */; };
 		88BCD1B121E590950015415F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 88BCD1AF21E590950015415F /* Main.storyboard */; };
 		88BCD1B321E590970015415F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 88BCD1B221E590970015415F /* Assets.xcassets */; };
 		88BCD1B621E590970015415F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 88BCD1B421E590970015415F /* LaunchScreen.storyboard */; };
+		88D4ABC625AE6B9300182AF1 /* HandShape.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88D4ABC525AE6B9300182AF1 /* HandShape.swift */; };
+		88D4ABC925AE6BB300182AF1 /* RPSController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88D4ABC825AE6BB300182AF1 /* RPSController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		88BCD1A821E590950015415F /* RPS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RPS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		88BCD1AB21E590950015415F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		88BCD1AD21E590950015415F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		88BCD1AD21E590950015415F /* RPSViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RPSViewController.swift; sourceTree = "<group>"; };
 		88BCD1B021E590950015415F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		88BCD1B221E590970015415F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		88BCD1B521E590970015415F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		88BCD1B721E590970015415F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		88D4ABC525AE6B9300182AF1 /* HandShape.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HandShape.swift; sourceTree = "<group>"; };
+		88D4ABC825AE6BB300182AF1 /* RPSController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RPSController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,7 +59,9 @@
 			isa = PBXGroup;
 			children = (
 				88BCD1AB21E590950015415F /* AppDelegate.swift */,
-				88BCD1AD21E590950015415F /* ViewController.swift */,
+				88BCD1AD21E590950015415F /* RPSViewController.swift */,
+				88D4ABC825AE6BB300182AF1 /* RPSController.swift */,
+				88D4ABC525AE6B9300182AF1 /* HandShape.swift */,
 				88BCD1AF21E590950015415F /* Main.storyboard */,
 				88BCD1B221E590970015415F /* Assets.xcassets */,
 				88BCD1B421E590970015415F /* LaunchScreen.storyboard */,
@@ -91,11 +97,12 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 1010;
-				LastUpgradeCheck = 1010;
+				LastUpgradeCheck = 1230;
 				ORGANIZATIONNAME = "Vincent Snow";
 				TargetAttributes = {
 					88BCD1A721E590950015415F = {
 						CreatedOnToolsVersion = 10.1;
+						LastSwiftMigration = 1230;
 					};
 				};
 			};
@@ -135,8 +142,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				88BCD1AE21E590950015415F /* ViewController.swift in Sources */,
+				88D4ABC625AE6B9300182AF1 /* HandShape.swift in Sources */,
+				88BCD1AE21E590950015415F /* RPSViewController.swift in Sources */,
 				88BCD1AC21E590950015415F /* AppDelegate.swift in Sources */,
+				88D4ABC925AE6BB300182AF1 /* RPSController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -188,6 +197,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -249,6 +259,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -291,7 +302,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.twitter.vints.RPS;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -309,7 +320,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.twitter.vints.RPS;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
